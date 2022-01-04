@@ -20,7 +20,7 @@ export const commonStyles = StyleSheet.create({
   },
   paddedContainer: {
     flex: 1,
-    backgroundColor: colors.lightBackground,
+    backgroundColor: colors.backgroundColor,
     paddingHorizontal: 16,
     paddingVertical: 12,
     position: 'relative',

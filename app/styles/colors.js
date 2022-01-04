@@ -8,4 +8,6 @@ export const colors = {
   startColor: '#EB7F01',
   textColor: '#C7D6D6',
   white: '#fff',
+  bottomTabBackground: '#141515',
+  accentGreen: '#0B2C25',
 };

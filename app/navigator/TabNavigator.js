@@ -50,10 +50,10 @@ const TabNavigator = () => {
       <Tab.Navigator
         screenOptions={{
           tabBarStyle: {
-            backgroundColor: colors.backgroundColor,
+            backgroundColor: colors.bottomTabBackground,
             height: 84,
-            elevation: 1,
             borderTopWidth: 0,
+            elevation: 3,
           },
         }}>
         {tabScreens.map(({name, component, icon}, i) => (
@@ -70,10 +70,7 @@ const TabNavigator = () => {
                   return (
                     <View style={styles.homeIconContainer}>
                       <View style={styles.homeIcon}>
-                        <Image
-                          source={icon}
-                          style={[styles.image, {marginBottom: 0}]}
-                        />
+                        <Image source={icon} style={styles.headerImage} />
                       </View>
                     </View>
                   );
@@ -97,23 +94,28 @@ export default TabNavigator;
 
 const styles = StyleSheet.create({
   image: {
-    height: 25,
-    width: 25,
+    height: 22,
+    width: 22,
     resizeMode: 'contain',
-    marginBottom: sizing.x8,
+    marginBottom: sizing.x12,
   },
   homeIcon: {
-    height: 60,
-    width: 60,
+    height: 58,
+    width: 58,
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 30,
+    borderRadius: 29,
+  },
+  headerImage: {
+    height: 24,
+    width: 24,
+    resizeMode: 'contain',
   },
   homeIconContainer: {
     padding: sizing.x10,
-    backgroundColor: colors.backgroundColor,
+    backgroundColor: colors.bottomTabBackground,
     borderRadius: 40,
-    top: -18,
+    top: -20,
   },
 });

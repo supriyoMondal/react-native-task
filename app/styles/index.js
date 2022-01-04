@@ -10,7 +10,7 @@ const Text = {
 
 const Header = {
   backgroundColor: colors.headerBackground,
-  containerStyle: {height: 96, elevation: 3},
+  containerStyle: {height: 96, elevation: 3, borderBottomWidth: 0},
 };
 export default theme = {
   colors: {
