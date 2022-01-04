@@ -1,15 +1,28 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
+import {Header, Text} from 'react-native-elements';
+import BackAction from '../components/common/BackAction';
 import {commonStyles} from '../styles/globalStyles';
+import {textStyles} from '../styles/typography';
 
-const TasksScreen = () => {
+const HeaderLeft = () => (
+  <View style={commonStyles.rowAlignCenter}>
+    <BackAction />
+    <Text style={textStyles.headerTitle}>My tasks</Text>
+  </View>
+);
+
+const TaskScreen = () => {
   return (
-    <View style={commonStyles.centerInFlex1}>
-      <Text>Task Screen</Text>
-    </View>
+    <>
+      <Header leftComponent={<HeaderLeft />} />
+      <View style={commonStyles.centerInFlex1}>
+        <Text>TaskScreen</Text>
+      </View>
+    </>
   );
 };
 
-export default TasksScreen;
+export default TaskScreen;
 
 const styles = StyleSheet.create({});

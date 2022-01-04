@@ -4,7 +4,7 @@ import {commonStyles} from '../styles/globalStyles';
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={commonStyles.centerInFlex1}>
       <Text>HomeScreen</Text>
     </View>
   );

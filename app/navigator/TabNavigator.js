@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {Routes} from './Routes';
@@ -12,6 +12,7 @@ import {
 } from '../screens';
 import {colors} from '../styles/colors';
 import {sizing} from '../styles/sizing';
+import {Text} from 'react-native-elements';
 
 const Tab = createBottomTabNavigator();
 
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     height: 25,
     width: 25,
     resizeMode: 'contain',
-    marginBottom: sizing.x16,
+    marginBottom: sizing.x8,
   },
   homeIcon: {
     height: 60,
