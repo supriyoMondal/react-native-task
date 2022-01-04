@@ -8,7 +8,6 @@ export const commonStyles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.backgroundColor,
   },
   rowAlignCenter: {
     flexDirection: 'row',

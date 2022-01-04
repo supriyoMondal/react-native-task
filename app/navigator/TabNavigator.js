@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import {Routes} from './Routes';
@@ -11,6 +11,7 @@ import {
   WalletScreen,
 } from '../screens';
 import {colors} from '../styles/colors';
+import {sizing} from '../styles/sizing';
 
 const Tab = createBottomTabNavigator();
 
@@ -49,10 +50,12 @@ const TabNavigator = () => {
         screenOptions={{
           tabBarStyle: {
             backgroundColor: colors.backgroundColor,
-            height: 64,
+            height: 84,
+            elevation: 1,
+            borderTopWidth: 0,
           },
         }}>
-        {tabScreens.map(({name, component, icon}) => (
+        {tabScreens.map(({name, component, icon}, i) => (
           <Tab.Screen
             name={name}
             key={name}
@@ -61,10 +64,23 @@ const TabNavigator = () => {
               headerShown: false,
               tabBarShowLabel: false,
               tabBarIcon: ({focused}) => {
-                const color = focused ? colors.primary : colors.grey;
+                const color = focused ? colors.primary : colors.lightText;
+                if (i === 2) {
+                  return (
+                    <View style={styles.homeIconContainer}>
+                      <View style={styles.homeIcon}>
+                        <Image
+                          source={icon}
+                          style={[styles.image, {marginBottom: 0}]}
+                        />
+                      </View>
+                    </View>
+                  );
+                }
                 return (
-                  <View>
-                    <Text style={{color, fontSize: 13}}>{name}</Text>
+                  <View style={{alignItems: 'center'}}>
+                    <Image source={icon} style={styles.image} />
+                    <Text style={{color, fontSize: 14}}>{name}</Text>
                   </View>
                 );
               },
@@ -78,4 +94,25 @@ const TabNavigator = () => {
 
 export default TabNavigator;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  image: {
+    height: 25,
+    width: 25,
+    resizeMode: 'contain',
+    marginBottom: sizing.x16,
+  },
+  homeIcon: {
+    height: 60,
+    width: 60,
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
+  },
+  homeIconContainer: {
+    padding: sizing.x10,
+    backgroundColor: colors.backgroundColor,
+    borderRadius: 40,
+    top: -18,
+  },
+});

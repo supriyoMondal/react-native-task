@@ -7,4 +7,5 @@ export const colors = {
   yellow: '#FFC100',
   startColor: '#EB7F01',
   textColor: '#C7D6D6',
+  white: '#fff',
 };
