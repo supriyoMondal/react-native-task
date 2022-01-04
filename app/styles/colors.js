@@ -10,4 +10,5 @@ export const colors = {
   white: '#fff',
   bottomTabBackground: '#141515',
   accentGreen: '#0B2C25',
+  cardBottom: '#05120F',
 };

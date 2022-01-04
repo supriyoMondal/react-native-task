@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {colors} from '../../styles/colors';
+import {sizing} from '../../styles/sizing';
 import {fontStyles} from '../../styles/typography';
 
 const {width} = Dimensions.get('screen');
@@ -92,7 +93,13 @@ const ScrollableTabs = ({tabs}) => {
           {useNativeDriver: false},
         )}
         renderItem={({item, index}) => (
-          <ScrollView bounces={false} style={{width}}>
+          <ScrollView
+            bounces={false}
+            contentContainerStyle={{
+              padding: sizing.x12,
+              paddingTop: sizing.x16,
+            }}
+            style={{width}}>
             {item.tab()}
           </ScrollView>
         )}
@@ -128,6 +135,7 @@ const styles = StyleSheet.create({
     width,
     borderBottomWidth: 1,
     borderBottomColor: colors.accentGreen,
+    marginTop: sizing.x16,
   },
   tabTitle: {
     fontSize: 16,

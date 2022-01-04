@@ -3,6 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {Header, Text} from 'react-native-elements';
 import BackAction from '../components/common/BackAction';
 import ScrollableTabs from '../components/common/ScrollableTabs';
+import CompletedTasks from '../components/Tasks/CompletedTasks';
 import {commonStyles} from '../styles/globalStyles';
 import {textStyles} from '../styles/typography';
 
@@ -17,7 +18,7 @@ const TaskScreen = () => {
   const tabs = [
     {title: 'Active', tab: () => <Text>active</Text>},
     {title: 'Upcoming', tab: () => <Text>upcoming</Text>},
-    {title: 'Completed', tab: () => <Text>Completed</Text>},
+    {title: 'Completed', tab: () => <CompletedTasks />},
   ];
   return (
     <>
